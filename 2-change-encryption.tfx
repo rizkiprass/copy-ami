@@ -1,7 +1,9 @@
-resource "aws_ami_copy" "test" {
-  name              = aws_ami_from_instance.example.name
-  description       = "A copy of ${aws_ami_from_instance.example.id} that encrypted with CMK"
-  source_ami_id     = aws_ami_from_instance.example.id
+#For copy to another account run this code.
+
+resource "aws_ami_copy" "server-1" {
+  name              = aws_ami_from_instance.server-1.name
+  description       = "A copy of ${aws_ami_from_instance.server-1.id} encrypted with CMK"
+  source_ami_id     = aws_ami_from_instance.server-1.id
   source_ami_region = "us-west-2"
   encrypted = "true"
   kms_key_id = "arn:aws:kms:us-west-2:272547513321:key/2b4ec77f-9419-4d5b-83a3-1b1eef55605a"
