@@ -1,6 +1,6 @@
 resource "aws_ami_from_instance" "server-1" {
   name                    = "server-1"
-  source_instance_id      = "i-0d7402fb2dc61da16"
+  source_instance_id      = "i-0bf9ec931d6ba6ba2"
   snapshot_without_reboot = "true"
 
   tags = {
