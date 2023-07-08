@@ -1,6 +1,6 @@
 //Source Region
 provider "aws" {
-  region     = "us-west-2"
+  region     = var.src-region
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -9,7 +9,7 @@ provider "aws" {
 provider "aws" {
   alias = "dest"
 
-  region     = "us-east-1"
+  region     = var.dest-region
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -28,3 +28,11 @@ terraform {
 variable "access_key" {}
 
 variable "secret_key" {}
+
+variable "src-region" {
+  default = "us-west-2"
+}
+
+variable "dest-region" {
+  default = "us-east-1"
+}
